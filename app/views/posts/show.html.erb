@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <div class="question_container">
+    <div class="question">
+      <h2><%= @question.title %></h2>
+      <%= form_tag("/index/vote") do %>
+        <% @choices.each do |choice| %>
+          <li><input type="radio" name="<%= @question.id %>" value="<%= choice.id %>">
+           <%= choice.choice %>
+          </li>
+        <% end %>
+        <input type="submit" value="投票する">
+      <% end %>
+    </div>
+  </div>
+</div>

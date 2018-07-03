@@ -1,0 +1,16 @@
+<div class="wrapper">
+<div class="question_container">
+  <div class="question">
+<%= form_tag("/index/create") do %>
+    <p>ランキングタイトル</p> <br>
+    <input type="text" name="title">
+    <p>選択肢</p>
+    <% for num in 1..@choice_how_many do %>
+      <input type="text" name="<% "choice#{num}" %>" value="<%= "選択肢#{num}" %>"> <br>
+    <% end %>
+    <a href="#" id="add_choice">選択肢を追加する</a>
+    <input type="submit" value="投稿">
+<% end %>
+</div>
+</div>
+</div>
